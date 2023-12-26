@@ -1,0 +1,41 @@
+﻿@model BlogMVC.Models.ViewModels.RequisicaoEditarTag
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Editar Tag - Admin</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if(Model is not null)
+    {
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" id="id" asp-for="Id" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" asp-for="Nome" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mostrar Tag</label>
+                <input type="text" class="form-control" id="mostrarnome" asp-for="MostrarNome" />
+            </div>
+            <div class="mb-3">
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-dark">Atualizar</button>
+                    <button type="submit" class="btn btn-danger ms-2"
+                            asp-area="" asp-controller="AdminTags" asp-action="Deletar">
+                        Deletar
+                    </button>
+                </div>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p>Tag não Encontrada!!</p>
+    }
+</div>
+

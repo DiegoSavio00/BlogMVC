@@ -1,0 +1,39 @@
+﻿@model List<BlogMVC.Models.Domain.Tag>
+
+<div class="bg-secondary bg-opacity-10 py-2">
+     <div class="container">
+         <h1>Mostrar Todas Tags - Admin</h1>
+     </div>
+</div>
+<div class="container py-5">
+    @if(Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Mostrar Nome</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tag in Model)
+                {
+                    <tr>
+                        <td>@tag.Id</td>
+                        <td>@tag.Nome</td>
+                        <td>@tag.MostrarNome</td>
+                        <td>
+                            <a asp-area="" asp-controller="AdminTags" asp-action="Editar" asp-route-id="@tag.Id">Editar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Sem Tags Encontradas!!</p>
+    }
+</div>

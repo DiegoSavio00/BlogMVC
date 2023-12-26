@@ -1,0 +1,25 @@
+﻿@model BlogMVC.Models.ViewModels.RequisicaoAdicionarTag
+
+<div class="bg-secondary bg-opacity-10 pyt-3">
+    <div class="container">
+        <h1>Adicionar Nova Tag - Admin</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" asp-for="Nome" required />
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mostrar Tag</label>
+            <input type="text" class="form-control" id="mostrarnome" asp-for="MostrarNome" required/>
+            <span class="text-danger" asp-validation-for="MostrarNome"></span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">Enviar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+﻿@model BlogMVC.Models.ViewModels.LoginViewModel
+<div class="container mx-auto">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+            <h1 class="mt-3 mb-3 h3">
+                Logar
+            </h1>
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Nome Usuario</label>
+                    <input type="text" id="nomeusuario" class="form-control" asp-for="NomeUsuario" required/>
+                    <span class="text-danger" asp-validation-for="NomeUsuario"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Senha</label>
+                    <input type="password" id="senha" class="form-control" asp-for="Senha" required minLenght="6" />
+                    <span class="text-danger" asp-validation-for="Senha"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-dark">Logar</button>
+                </div>
+                <input type="hidden" asp-for="RetornoUrl"/>
+            </form>
+        </div>
+    </div>
+</div>
